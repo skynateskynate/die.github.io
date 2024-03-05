@@ -17,11 +17,17 @@
     --bg-s2: #f6eeee;
     --bg-btn-s2: #262626;
     --color-text-bt-s2: #fff;
+    --color-hr: #19187a;
 }
 body{
     color: var(--color-gl);
 }
 
+hr{
+    color: var(--color-hr);
+    margin: 10px 0;
+    height: 1px;
+}
 ::-webkit-scrollbar{
     width: 7px;
 }
@@ -31,14 +37,31 @@ body{
     border: 1px solid #01003f;
     border-radius: 10px;
 }
+.bx-menu{
+    display: none;
+}
+
+.bx.bxs-book{
+    color: var(--color-hr);
+    transform: rotate(30deg);
+    position: absolute;
+    margin: 0 10vw;
+    font-size: 320px;
+    opacity: 0;
+    z-index: 0;
+    animation: icon 2s ease-out forwards;
+    animation-delay: 3.2s;
+}
 .logo{
     position: relative;
     font-weight: 700;
     font-size: 25px;
-    width: 200px;
     color: inherit;
     line-height: .9;
     top: -1px;
+    width: 180px;
+    display: block;
+    margin: 0 auto;
 }
 
 .header{
@@ -47,9 +70,6 @@ body{
     left: 0;
     width: 100%;
     background: var(--bg-home);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 25px 8%;
     z-index: 1000;
     box-shadow: 0 2px 5px #000;
@@ -57,18 +77,31 @@ body{
 
 .navbar{
     position: relative;
+    margin: 20px 0;
+    display: inline-block;
 }
 
 .navbar a{
     color: inherit;
     font-weight: 500;
     font-size: 18px;
-    margin: 0 20px;
+    margin: 0 30px;
     transition: .5s;
 }
 
 .navbar a:hover, .navbar a.active{
     color: var(--bg-btn);
+}
+
+
+.home{
+    background-color: var(--bg-home);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding: 50px 8% 0;
 }
 
 .home{
@@ -81,38 +114,38 @@ body{
 }
 
 .section1{
-    max-width: 630px;
     position: relative;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .section1 h1{
-    font-size: 40px;
+    font-size: 30px;
     line-height: 1.2;
     position: relative;
 }
 
-.section1 h1:nth-child(6){
+.section1 h1:nth-child(4){
     background: linear-gradient(#59ffff, #1952ab);
     background-clip: text;
     color: transparent;
 }
 
 .section1 p{
-    font-size: 18px;
+    font-size: 16px;
     margin: 25px 0 30px;
     position: relative;
 }
 
 .section1-banniere{
-    position: absolute;
-    top: 0;
-    width: 500px;
+    width: 80vw;
     border-radius: 8px;
-    transform: translateX(630px);
 }
 .btn-box{
     width: 345px;
     display: flex;
+    margin: 0 auto;
     justify-content: space-between;
     position: relative;
 }
@@ -132,6 +165,7 @@ body{
 .btn.sign-up{
     position: relative;
     border: none;
+    display: inline-block;
 }
 
 .btn-box .btn:nth-child(2){
@@ -159,22 +193,15 @@ body{
     position: absolute;
     background-color: var(--bg-home);
     width: 100%;
-    transform: translateX(630px);
     z-index: 2;
     height: 100%;
     animation: fade-in 2s ease-out forwards;
     animation-delay: 3.2s;
 }
 
-.bx.bxs-book{
-    color: #19187a;
-    transform: rotate(30deg);
-    position: absolute;
-    font-size: 400px;
-    opacity: 0;
-    z-index: 0;
-    animation: icon 2s ease-out forwards;
-    animation-delay: 3.2s;
+.fn{
+    position: relative;
+    margin: 30px auto 0;
 }
 
 .section2{
@@ -182,35 +209,32 @@ body{
     width: 100%;
     background: var(--bg-s3);
     color: #000;
+    z-index: 2;
 }
 
 .section2 .container{
-    display: flex;
     width: 100%;
     padding: 30px 5% 0;
 }
 
-.section2 .container .container-container{
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .container-container .s2-title{
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 700;
     margin-bottom: 20px;
     justify-content: center;
     background: linear-gradient(#434343c1, #000000);
     background-clip: text;
     color: transparent;
+    text-align: center;
 }
 
 .container-container .body{
     display: flex;
-    column-gap: 50px;
+    flex-direction: column-reverse;
 }
 
 .container-container .body p{
+    margin: 20px 0 5px;
     font-size: 18px;
 }
 
@@ -224,9 +248,11 @@ body{
 }
 
 .container-container .btn-s2{
-    margin: 20px 0;
+    margin: 20px auto;
     background: var(--bg-btn-s2);
     border: 2px solid var(--bg-btn-s2);
+    width: 150px;
+    text-align: center;
 }
 
 .container-container .btn-s2 a{
@@ -235,8 +261,7 @@ body{
 
 .section3{
     width: 100%;
-    height: 200vh;
-    background: var(--color-bg-s3);
+    background: var(--bg-home);
     color: #000;
 }
 
@@ -251,9 +276,9 @@ body{
 
 .s3-container-container .s3-title{
     text-align: center;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin: 20px 0;
     background: var(--color-gl);
     background-clip: text;
     color: transparent;
@@ -261,7 +286,7 @@ body{
 
 .s3-container-container .s3-cours{
     display: flex;
-    column-gap: 20px;
+    flex-direction: column;
 }
 
 .s3-container-container .s3-cours-details{
@@ -275,14 +300,14 @@ body{
     color: var(--color-gl);
 }
 .s3-container-container .btn-s3{
+    margin: -30px auto 0;
     width: 180px;
 }
 
 .s3-work{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     column-gap: 50px;
-    margin: 30px 0;
 }
 
 .s3-work h1{
@@ -300,10 +325,17 @@ body{
 }
 
 .s3-container-container img{
-    width: 350px;
+    width: 100%;
+    margin: 15px 0;
     border-radius: 8px;
     box-shadow: 0 1px 3px #000;
 }
+
+.footer{
+    height: 100vh;
+    width: 100%;
+}
+
 @keyframes animate{
     100%{
         width: 0;
@@ -317,5 +349,138 @@ body{
 @keyframes icon{
     100%{
         opacity: 1;
+    }
+}
+
+@media screen and (min-width: 980px){
+    .bx-menu{
+        display: none;
+    }
+
+    .bx.bxs-book{
+        color: #19187a;
+        transform: rotate(30deg);
+        position: absolute;
+        font-size: 400px;
+        opacity: 0;
+        z-index: 0;
+        animation: icon 2s ease-out forwards;
+        animation-delay: 3.2s;
+    }
+
+    .logo{
+        transition: 1s;
+        margin: 0;
+    }
+
+    .header{
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navbar a{
+        color: inherit;
+        font-weight: 500;
+        font-size: 18px;
+        margin: 0 20px;
+        transition: .5s;
+    }
+    
+    .home{
+        background-color: var(--bg-home);
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        padding: 50px 8% 0;
+    }
+    .section1{
+        position: relative;
+        display: flex;
+        margin: 0 auto;
+        column-gap: 30px;
+    }
+
+    .section1 h1{
+        font-size: 40px;
+        line-height: 1.2;
+        position: relative;
+    }
+
+    .section1 p{
+        font-size: 18px;
+        margin: 25px 0 30px;
+        position: relative;
+    }
+        
+    .btn-box{
+        width: 345px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+    
+    .section2 .container{
+        display: flex;
+        width: 100%;
+        padding: 30px 5% 0;
+    }
+    
+    .section2 .container .container-container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .container-container .body{
+        display: flex;
+        column-gap: 50px;
+    }
+    .container-container .s2-title{
+        font-size: 50px;
+    }
+    .s3-container-container .s3-title{
+        font-size: 50px;
+    }
+    .s3-container-container .s3-cours{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .s3-container-container .s3-cours-details{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        row-gap: 50px;
+    }
+    
+}
+
+@media screen and (max-width: 1090px){
+    .bx-menu{
+        display: block;
+        font-size: 50px;
+    }
+    .header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo{
+        margin: 0;
+    }
+
+    .navbar{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 540px){
+    .navbar{
+        max-width: 540px;
+    }
+    .btn.sign-up{
+        display: none;
     }
 }
